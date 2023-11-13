@@ -4,8 +4,10 @@ const text = document.querySelector('#name-output')
 input.addEventListener('input', hendClick)
 
 function hendClick(event) {
-    text.textContent = event.currentTarget.value
-    if (text.textContent === "") {
+    const inputValue = event.currentTarget.value.trim()
+    if (inputValue !== "") {
+        text.textContent = inputValue
+    } else {
         text.textContent = 'Anonymous'
     }
 }
